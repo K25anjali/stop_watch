@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+     background: linear-gradient(145deg, #484448 5%, #271434 );
+    font-family: "Courier Prime", monospace;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stopwatch{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   box-shadow: 0px 4px 27px -12px #F6B400;
+   padding:100px 0 0 9px;
+   border-radius: 50% 50% 10px 10px;
+}
+ 
+.box{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    background-image: linear-gradient(#151537,rgba(0,0,0,0.8));
+    color: #fff;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+    border-radius: 50%;
+    position:relative;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    width:150%;
+    height:150%;
+    border-radius: 50%;
+    background: conic-gradient(from 90deg, #020223 50%, #F6B400 90%, #a5c669 100%);
+    left: -25%;
+    top: -25%;
+    animation: rotate 3s linear infinite;
+}
+.no-animation::before {
+    animation: none; /* This will stop the rotation animation */
+}
+.box::after{
+    content: '';
+    position: absolute;
+    width:90%;
+    height:90%;
+    border-radius: 50%;
+   background-color: #020223;
+   margin: auto;
+    left:5%;
+    top: 5%;
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+h1{
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+    border-radius: 50%;
+    margin:0 auto;
+    padding: 100px 20px;
+    font-weight: 600;
+    font-size: 40px;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+.stopwatch .buttons{
+    margin-top: 40px;
+}
+.buttons button{
+    padding: 10px 40px;
+    background-color: #222342;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius: 50px;
+    margin:1rem;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: transform .3s;
+}
+button:hover,
+button:focus
+{
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+    transform: scale(1.1);
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #020223;
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+header{
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+}
+
+/* Media Queries for responsiveness */
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) { 
+    .stopwatch {
+        padding: 30px 0 0 5px;
+    }
+    .buttons{
+        margin:10px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .stopwatch {
+        padding: 80px 0 0 9px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .stopwatch {
+        padding: 100px 0 0 9px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .stopwatch {
+        padding: 120px 0 0 9px;
+    }
+}
